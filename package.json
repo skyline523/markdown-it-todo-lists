@@ -1,7 +1,7 @@
 {
   "name": "markdown-it-todo-list",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@9.5.0",
   "description": "A markdown-it plugin to create todo list",
   "author": "Leet <programingwithli@gmail.com>",
