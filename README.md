@@ -102,7 +102,7 @@ to HTML:
 [npm-downloads-href]: https://npmjs.com/package/markdown-it-todo-lists
 [bundle-src]: https://img.shields.io/bundlephobia/minzip/markdown-it-todo-lists?style=flat&colorA=080f12&colorB=1fa669&label=minzip
 [bundle-href]: https://bundlephobia.com/result?p=markdown-it-todo-lists
-[license-src]: https://img.shields.io/github/license/antfu/markdown-it-todo-lists.svg?style=flat&colorA=080f12&colorB=1fa669
-[license-href]: https://github.com/antfu/markdown-it-todo-lists/blob/main/LICENSE
+[license-src]: https://img.shields.io/github/license/skyline523/markdown-it-todo-lists.svg?style=flat&colorA=080f12&colorB=1fa669
+[license-href]: https://github.com/skyline523/markdown-it-todo-lists/blob/main/LICENSE
 [jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
 [jsdocs-href]: https://www.jsdocs.io/package/markdown-it-todo-lists
