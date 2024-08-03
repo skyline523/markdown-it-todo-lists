@@ -2,11 +2,17 @@ import type { PluginWithOptions } from 'markdown-it'
 import type { Token } from 'markdown-it/index.js'
 
 export interface MarkdownItTodoListOptions {
+  /**
+   * Checkbox selectable
+   */
   enabled?: boolean
+  /**
+   * Use `label` label nesting
+   */
   useLabel?: boolean
 }
 
-const MarkdownItTodoList: PluginWithOptions<MarkdownItTodoListOptions> = (md, options = {}) => {
+const MarkdownItTodoLists: PluginWithOptions<MarkdownItTodoListOptions> = (md, options = {}) => {
   const {
     enabled = false,
     useLabel = false,
@@ -68,4 +74,4 @@ function setTokenAttrs(token: Token, name: string, value: string): void {
   }
 }
 
-export default MarkdownItTodoList
+export default MarkdownItTodoLists

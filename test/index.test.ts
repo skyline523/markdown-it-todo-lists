@@ -1,9 +1,9 @@
 import process from 'node:process'
 import { describe, expect, it } from 'vitest'
 import MarkdownIt from 'markdown-it'
-import MarkdownItTodoList from '../src'
+import MarkdownItTodoLists from '../src'
 
-describe('should', () => {
+describe('fixtures', () => {
   const files = import.meta.glob('./input/*.md', { as: 'raw', eager: true })
   const filter = process.env.FILTER
   Object.entries(files)
@@ -19,7 +19,7 @@ describe('should', () => {
           xhtmlOut: true,
         })
 
-        md.use(MarkdownItTodoList, {
+        md.use(MarkdownItTodoLists, {
           useLabel: true,
         })
 
