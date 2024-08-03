@@ -6,12 +6,12 @@
   "description": "A markdown-it plugin to create todo lists",
   "author": "Leet <programingwithli@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/antfu/markdown-it-todo-list#readme",
+  "homepage": "https://github.com/antfu/markdown-it-todo-lists#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/markdown-it-todo-list.git"
+    "url": "git+https://github.com/antfu/markdown-it-todo-lists.git"
   },
-  "bugs": "https://github.com/antfu/markdown-it-todo-list/issues",
+  "bugs": "https://github.com/antfu/markdown-it-todo-lists/issues",
   "keywords": [
     "markdown-it",
     "todo",
