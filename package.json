@@ -1,9 +1,9 @@
 {
-  "name": "markdown-it-todo-list",
+  "name": "markdown-it-todo-lists",
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@9.5.0",
-  "description": "A markdown-it plugin to create todo list",
+  "description": "A markdown-it plugin to create todo lists",
   "author": "Leet <programingwithli@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/antfu/markdown-it-todo-list#readme",
