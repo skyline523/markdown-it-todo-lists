@@ -92,7 +92,7 @@ to HTML:
 
 ## License
 
-[MIT](./LICENSE) License © 2024-PRESENT [Anthony Fu](https://github.com/skyline523)
+[MIT](./LICENSE) License © 2024-PRESENT [Leet](https://github.com/skyline523)
 
 <!-- Badges -->
 
