@@ -34,7 +34,7 @@ const MarkdownItTodoLists: PluginWithOptions<MarkdownItTodoListOptions> = (md, o
   })
 
   md.renderer.rules.todo_list_inline = function (tokens, idx) {
-    const content = tokens[idx].content.slice(4)
+    const content = tokens[idx].content.slice(3)
     const disabled = !enabled ? 'disabled' : ''
 
     const inputWrapper = (content: string): string => `<label>${content}</label>`
