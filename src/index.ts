@@ -20,13 +20,11 @@ const MarkdownItTodoLists: PluginWithOptions<MarkdownItTodoListOptions> = (md, o
 
   md.core.ruler.after('inline', 'todo-list', (state) => {
     const tokens = state.tokens
-    for (let i = 0; i < tokens.length; i++) {
+    for (let i = 2; i < tokens.length; i++) {
       if (isTodo(tokens, i)) {
         setTokenAttrs(tokens[i - 2], 'class', `todo-list-item${enabled ? ' enabled' : ''}`)
 
-        const isUlOpen = tokens[i - 3].level === 0 && tokens[i - 3].type === 'bullet_list_open' && tokens[i - 3].tag === 'ul'
-        if (isUlOpen)
-          setTokenAttrs(tokens[i - 3], 'class', 'todo-list-container')
+        setTokenAttrs(tokens[parentToken(tokens, i - 2)], 'class', 'todo-list-container')
 
         tokens[i].type = 'todo_list_inline'
       }
@@ -60,6 +58,11 @@ function isTodo(tokens: Token[], index: number): boolean {
     && tokens[index - 1].type === 'paragraph_open'
     && tokens[index - 2].type === 'list_item_open'
     && (tokens[index].content.startsWith('[ ] ') || tokens[index].content.startsWith('[x] ') || tokens[index].content.startsWith('[X] '))
+}
+
+function parentToken(tokens: Token[], index: number) {
+  const targetLevel = tokens[index].level - 1
+  return tokens.findLastIndex((token, i) => i < index && token.level === targetLevel)
 }
 
 function setTokenAttrs(token: Token, name: string, value: string): void {
