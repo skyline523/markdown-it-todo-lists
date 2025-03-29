@@ -33,25 +33,28 @@ const MarkdownItTodoLists: PluginWithOptions<MarkdownItTodoListOptions> = (md, o
     }
   })
 
-  md.renderer.rules.todo_list_inline = function (tokens, idx) {
-    const content = tokens[idx].content.slice(3)
+  md.renderer.rules.todo_list_inline = function (tokens, idx, options, env) {
+    const token = tokens[idx]
+    const children = token.children || []
+
+    children[0].content = children[0].content.slice(3)
+
     const disabled = !enabled ? 'disabled' : ''
 
-    const inputWrapper = (content: string): string => `<label>${content}</label>`
+    const renderedContent = md.renderer.renderInline(children, options, env)
+
+    const inputWrapper = (content: string) => `<label>${content}</label>`
 
     let htmlContent
 
-    if (tokens[idx].content.startsWith('[x] ') || tokens[idx].content.startsWith('[X] ')) {
-      htmlContent = `<input class="todo-list-item-checkbox" type="checkbox" checked ${disabled} />${content}`
+    if (token.content.startsWith('[x] ') || token.content.startsWith('[X] ')) {
+      htmlContent = `<input class="todo-list-item-checkbox" type="checkbox" checked ${disabled} />`
     }
-    else if (tokens[idx].content.startsWith('[ ] ')) {
-      htmlContent = `<input class="todo-list-item-checkbox" type="checkbox" ${disabled} />${content}`
-    }
-    else {
-      htmlContent = content
+    else if (token.content.startsWith('[ ] ')) {
+      htmlContent = `<input class="todo-list-item-checkbox" type="checkbox" ${disabled} />`
     }
 
-    return useLabel ? inputWrapper(htmlContent) : htmlContent
+    return useLabel ? inputWrapper(`${htmlContent}${renderedContent}`) : `${htmlContent}${renderedContent}`
   }
 }
 
